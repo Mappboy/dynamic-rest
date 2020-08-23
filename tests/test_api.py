@@ -619,9 +619,9 @@ class TestUsersAPI(APITestCase):
         response = self.client.get(url)
         self.assertEqual(400, response.status_code)
         self.assertEqual(
-            ["'0' value has an invalid date format. "
-             "It must be in YYYY-MM-DD format."],
-            response.data
+            ['"0" value has an invalid date format. '
+             'It must be in YYYY-MM-DD format.'],
+            response.data[0]
         )
 
     def test_get_with_filter_deferred(self):
